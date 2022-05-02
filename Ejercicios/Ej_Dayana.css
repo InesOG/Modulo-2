@@ -1,0 +1,14 @@
+.main {
+    background-color: pink;
+  }
+  
+.main__title {
+    color: red;
+}
+
+.destacada {
+    font-size: 150%;
+    background-color: green;
+    color: white;
+    text-decoration: underline;
+}
