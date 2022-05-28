@@ -72,7 +72,7 @@ dataList.innerHTML = `${kittenOne} ${kittenTwo} ${kittenThree}`;*/
   Ejercicio Capitulo 2.3 Condicionales:
   Agregar la funcionalidad del filtro por descripcion.
 ***************************************
-*/
+
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
 
@@ -104,12 +104,12 @@ if( !kitten3_description.includes(descrSearchText) ) {
   kitten3.remove();
   }
 
-/*
+
 ************************************************************
  Comprobar si el formulario nuevo se muestra. Si se muestra, 
  ocultarlo, y si no, mostrarlo
 ************************************************************
-*/
+
 
 const newFormElement = document.querySelector('.js-new-form');
 
@@ -118,3 +118,30 @@ if (newFormElement.classList.contains('collapsed')) {
 } else {
   newFormElement.classList.add('collapsed');
 }
+
+
+
+************************************************************
+ Comprobar si se ha especificado raza para kitten1 y si no,
+ mostrar "No se ha especificado la raza"
+************************************************************
+*/
+
+const cardsContainer = document.querySelector('.js-list');
+
+
+const kitten1 = cardsContainer.querySelectorAll('.card')[0];
+
+const kitten1_race = kitten1.querySelector('.card_race').innerHTML;
+
+let html = '';
+
+if (kitten1_race === "") {
+  html = `No se ha especificado la raza`;
+} else {
+  html = kitten1_race;
+}
+
+kitten1.querySelector('.card_race').innerHTML = html;
+
+console.log(html);
