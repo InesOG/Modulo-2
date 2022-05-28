@@ -1,9 +1,11 @@
 "use strict";
 
 /* 
-*************************
-  Ejercicio Capitulo 2.2
-*************************
+*****************************************************
+  Ejercicio Capitulo 2.2:
+  Mostrar el formulario para agregar gatos y agregar 
+  la informacion de cada gato directamente desde js
+*****************************************************
 
 // Unhide the Form 
 const newForm = document.querySelector('.js-new-form');
@@ -67,7 +69,8 @@ dataList.innerHTML = `${kittenOne} ${kittenTwo} ${kittenThree}`;*/
 
 /*
 ***************************************
-  Ejercicio Capitulo 2.3 Condicionales
+  Ejercicio Capitulo 2.3 Condicionales:
+  Agregar la funcionalidad del filtro por descripcion.
 ***************************************
 */
 
@@ -101,3 +104,17 @@ if( !kitten3_description.includes(descrSearchText) ) {
   kitten3.remove();
   }
 
+/*
+************************************************************
+ Comprobar si el formulario nuevo se muestra. Si se muestra, 
+ ocultarlo, y si no, mostrarlo
+************************************************************
+*/
+
+const newFormElement = document.querySelector('.js-new-form');
+
+if (newFormElement.classList.contains('collapsed')) {
+  newFormElement.classList.remove('collapsed');
+} else {
+  newFormElement.classList.add('collapsed');
+}
