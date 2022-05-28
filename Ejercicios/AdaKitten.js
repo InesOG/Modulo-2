@@ -1,14 +1,22 @@
 "use strict";
 
-/* Unhide the Form */
+/* 
+*************************
+  Ejercicio Capitulo 2.2
+*************************
+
+// Unhide the Form 
 const newForm = document.querySelector('.js-new-form');
 
 newForm.classList.remove("collapsed");
 
+
+
+// Agregar el código del li desde HTMl 
+// Repetir este proceso por cada gatito 
+
 const dataList = document.querySelector('.js-list');
 
-/* Agregar el código del li desde HTMl 
-Repetir este proceso por cada gatito */
 const kittenOne = `<li class="card">
 <article>
 <img
@@ -34,7 +42,7 @@ const kittenTwo = `<li class="card">
 <h3 class="card_title">Fiona</h3>
 <h4 class="card_race">British Shorthair</h4>
 <p class="card_description">
-  Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste.
+  Ruiseño, juguetón y cariñoso le guta estar tranquilo y que nadie le moleste.
   Es una maravilla acariciarle!
 </p>
 </li>`;
@@ -53,4 +61,43 @@ const kittenThree = `<li class="card">
 </p>
 </li>`;
 
-dataList.innerHTML = `${kittenOne} ${kittenTwo} ${kittenThree}`;
+dataList.innerHTML = `${kittenOne} ${kittenTwo} ${kittenThree}`;*/
+
+
+
+/*
+***************************************
+  Ejercicio Capitulo 2.3 Condicionales
+***************************************
+*/
+
+const input_search_desc = document.querySelector('.js_in_search_desc');
+
+input_search_desc.value = 'cariñoso';
+
+const descrSearchText = input_search_desc.value;
+
+
+const cardsContainer = document.querySelector('.js-list');
+
+
+const [kitten1, kitten2, kitten3] = cardsContainer.querySelectorAll('.card');
+
+const kitten1_description = kitten1.querySelector('.card_description').innerHTML;
+const kitten2_description = kitten2.querySelector('.card_description').innerHTML;
+const kitten3_description = kitten3.querySelector('.card_description').innerHTML;
+
+
+
+if( !kitten1_description.includes(descrSearchText) ) {
+  kitten1.remove();
+  }
+  
+if( !kitten2_description.includes(descrSearchText) ) {
+  kitten2.remove();
+  }
+  
+if( !kitten3_description.includes(descrSearchText) ) {
+  kitten3.remove();
+  }
+
