@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 // elemento de HTML
 const buttonX = document.querySelector(".alert");
