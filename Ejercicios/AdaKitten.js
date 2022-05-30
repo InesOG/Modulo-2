@@ -125,7 +125,7 @@ if (newFormElement.classList.contains('collapsed')) {
  Comprobar si se ha especificado raza para kitten1 y si no,
  mostrar "No se ha especificado la raza"
 ************************************************************
-*/
+
 
 const cardsContainer = document.querySelector('.js-list');
 
@@ -145,3 +145,76 @@ if (kitten1_race === "") {
 kitten1.querySelector('.card_race').innerHTML = html;
 
 console.log(html);
+
+
+***************************************
+  Ejercicio Capitulo 4 Eventos:
+***************************************
+*/
+
+// 1.Mostrar/ocultar formulario.
+
+const plusIcon = document.querySelector('.fa-plus-circle');
+const newForm = document.querySelector('.js-new-form');
+
+plusIcon.addEventListener('click', () => {
+  newForm.classList.toggle('collapsed');
+})
+
+// 2.Validar formulario nuevo gatito
+
+const addCatbutton = document.querySelector('.js-btn-add');
+
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+
+
+addCatbutton.addEventListener('click', (event) => {
+  
+  event.preventDefault(); // This is to avoid the form window to close after clicking on Add
+
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = "Fill the mandatory fields";
+  } else {
+    labelMessageError.innerHTML = '';
+  }
+});
+
+// 3.Validar formulario busqueda
+
+const buttonBuscar = document.querySelector('.buscar-btn');
+
+buttonBuscar.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const valorDesc = document.querySelector('.js_in_search_desc').innerHTML;
+  const valorRaza = document.querySelector('.js-in-search-raza').innerHTML;
+
+  if (valorDesc === '' || valorRaza === '') {
+    const errorMessage = document.querySelector('.js-search-error');
+    errorMessage.innerHTML = "No has rellenado ambos campos para la busqueda";
+  };
+});
+
+// 4.Cancelar formulario limpiando los inputs
+
+const cancelButton = document.querySelector('.button-cancel');
+
+const inputRaza = document.querySelector('.js-input-raza');
+
+cancelButton.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  inputDesc.value = '';
+  inputPhoto.value = '';
+  inputName.value = '';
+  inputRaza.value = '';
+  
+  newForm.classList.add('collapsed');
+})
