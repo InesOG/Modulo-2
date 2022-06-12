@@ -252,3 +252,47 @@ function handleClickNewCatForm(event) {
 
 // 2. Crear el gatito en HTML
 
+function renderKitten(url, desc, name, race) {
+  return `
+    <li class="card">
+      <article>
+        <img
+          class="card_img"
+          src=${url}
+          alt="gatito"
+        />
+        <h3 class="card_title">${name}</h3>
+        <h4 class="card_race">${race}</h4>
+        <p class="card_description">${desc}</p>
+      </article>
+    </li>
+  `
+}
+
+const ulElement = document.querySelector('.js-list');
+
+const kitten1 = renderKitten(
+  "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
+  "Ruiseño, juguetón, le gusta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+  "Anastacio",
+  ""
+)
+
+const kitten2 = renderKitten(
+  "https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg",
+  "Ruiseño, juguetón y cariñoso le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+  "Fiona",
+  "British Shorthair"
+)
+
+const kitten3 = renderKitten(
+  "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg",
+  "Ruiseño, juguetón y cariñoso le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+  "Cielo",
+  "British Shorthair"
+)
+
+ulElement.innerHTML = kitten1 + kitten2 + kitten3; 
+
+
+// 3. Agregar nuevo gatito
