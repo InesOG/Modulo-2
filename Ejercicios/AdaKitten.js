@@ -150,7 +150,7 @@ console.log(html);
 ***************************************
   Ejercicio Capitulo 4 Eventos:
 ***************************************
-*/
+
 
 // 1.Mostrar/ocultar formulario.
 
@@ -218,3 +218,37 @@ cancelButton.addEventListener('click', (event) => {
   
   newForm.classList.add('collapsed');
 })
+
+/*
+***************************************
+  Ejercicio Capitulo 5 Funciones:
+***************************************
+*/
+
+// 1. Mostrar/ocultar el formulario nuevo gatito
+
+const plusIcon = document.querySelector('.fa-plus-circle');
+const newCatForm = document.querySelector('.js-new-form');
+
+function showNewCatForm() {
+  newCatForm.classList.remove('collapsed');
+}
+
+function hideNewCatForm() {
+  newCatForm.classList.add('collapsed');
+}
+
+plusIcon.addEventListener('click', handleClickNewCatForm);
+
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+  if (newCatForm.classList.contains('collapsed')) {
+    showNewCatForm();
+  } else {
+    hideNewCatForm();
+  }
+}
+
+
+// 2. Crear el gatito en HTML
+
