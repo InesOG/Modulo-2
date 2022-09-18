@@ -296,3 +296,24 @@ ulElement.innerHTML = kitten1 + kitten2 + kitten3;
 
 
 // 3. Agregar nuevo gatito
+
+const addButton = document.querySelector('.js-btn-add');
+
+function addNewKitten(event) {
+
+  event.preventDefault(); // To prevent the page to refresh
+
+  // Si defino las constantes fuera de la funcion los lee al refrescar la pagina
+  // si los defino dentro de la funcion los lee cuando ya tengan valor
+  
+  const inputUrl = document.querySelector('.js-input-photo').value;
+  const inputName = document.querySelector('.js-input-name').value;
+  const inputRace = document.querySelector('.js-input-raza').value;
+  const inputDesc = document.querySelector('.js-input-desc').value;
+
+  const newKittenInfo = renderKitten(inputUrl, inputName, inputRace, inputDesc);
+
+  return ulElement.innerHTML += newKittenInfo;
+}
+
+addButton.addEventListener('click', addNewKitten);
