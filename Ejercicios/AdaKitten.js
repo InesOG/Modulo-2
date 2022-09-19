@@ -317,3 +317,26 @@ function addNewKitten(event) {
 }
 
 addButton.addEventListener('click', addNewKitten);
+
+// 4. Cancelar nuevo gatito
+
+const cancelButton = document.querySelector('.js-btn-cancel');
+
+function cancelNewKitten(event) {
+  event.preventDefault();
+
+  const inputUrl = document.querySelector('.js-input-photo');
+  const inputName = document.querySelector('.js-input-name');
+  const inputRace = document.querySelector('.js-input-raza');
+  const inputDesc = document.querySelector('.js-input-desc');
+
+  inputUrl.value = '';
+  inputName.value = '';
+  inputRace.value = '';
+  inputDesc.value = '';
+
+  hideNewCatForm();
+
+}
+
+cancelButton.addEventListener('click', cancelNewKitten);
