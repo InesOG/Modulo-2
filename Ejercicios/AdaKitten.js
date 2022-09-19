@@ -382,7 +382,7 @@ function renderRace(race) {
 
 for (let i = 0; i < ulElement.querySelectorAll('.card').length; i++) {
   const kitten = ulElement.querySelectorAll('.card')[i];
-  const kittenRace = kitten.querySelector('.card_race').innerHTML;
-  kitten.querySelector('.card_race').innerHTML = renderRace(kittenRace);
+  const kittenRace = kitten.querySelector('.card_race');
+  kittenRace.innerHTML = renderRace(kittenRace.innerHTML);
 } 
 
