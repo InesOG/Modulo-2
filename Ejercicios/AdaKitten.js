@@ -287,7 +287,7 @@ const kitten2 = renderKitten(
 
 const kitten3 = renderKitten(
   "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg",
-  "Ruiseño, juguetón y cariñoso le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+  "Un gato perezoso",
   "Cielo",
   "British Shorthair"
 )
@@ -340,3 +340,29 @@ function cancelNewKitten(event) {
 }
 
 cancelButton.addEventListener('click', cancelNewKitten);
+
+
+// 5. Filtrar por descripcion
+
+const buttonSearch = document.querySelector('.js-button-search');
+
+function filterKitten(event) {
+  event.preventDefault();
+
+  const input_search_desc = document.querySelector('.js_in_search_desc');
+  const descrSearchText = input_search_desc.value;
+
+  ulElement.innerHTML = '';
+
+  if (kitten1.includes(descrSearchText)) {
+    ulElement.innerHTML += kitten1;
+  }
+  if (kitten2.includes(descrSearchText)) {
+    ulElement.innerHTML += kitten2;
+  }
+  if (kitten3.includes(descrSearchText)) {
+    ulElement.innerHTML += kitten3;
+  }
+}
+
+buttonSearch.addEventListener('click', filterKitten);
