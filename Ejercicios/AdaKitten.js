@@ -366,3 +366,23 @@ function filterKitten(event) {
 }
 
 buttonSearch.addEventListener('click', filterKitten);
+
+
+// 6. Mostrar la raza o no (este modo de hacerlo es mas avanzo que el temario por el que voy ya que incluye for loops)
+
+function renderRace(race) {
+
+  if (race === '' || typeof race === 'undefined') {
+    return `No se ha especificado la raza`;
+  } else {
+    return race;
+  }
+
+};
+
+for (let i = 0; i < ulElement.querySelectorAll('.card').length; i++) {
+  const kitten = ulElement.querySelectorAll('.card')[i];
+  const kittenRace = kitten.querySelector('.card_race').innerHTML;
+  kitten.querySelector('.card_race').innerHTML = renderRace(kittenRace);
+} 
+
