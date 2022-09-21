@@ -221,7 +221,7 @@ cancelButton.addEventListener('click', (event) => {
 
 /*
 ***************************************
-  Ejercicio Capitulo 5 Funciones:
+  Ejercicios Capitulo 5 Funciones:
 ***************************************
 */
 
@@ -385,4 +385,11 @@ for (let i = 0; i < ulElement.querySelectorAll('.card').length; i++) {
   const kittenRace = kitten.querySelector('.card_race');
   kittenRace.innerHTML = renderRace(kittenRace.innerHTML);
 } 
+
+/*
+***************************************
+  Ejercicios Capitulo 6 Objetos:
+***************************************
+*/
+
 
