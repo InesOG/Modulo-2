@@ -390,7 +390,7 @@ for (let i = 0; i < ulElement.querySelectorAll('.card').length; i++) {
 ***************************************
   Ejercicios Capitulo 6 Objetos:
 ***************************************
-*/
+
 
 // 1. Convertir cada gatito en un objeto 
 
@@ -445,6 +445,76 @@ function renderRace(race) {
 const ulElement = document.querySelector('.js-list');
 
 ulElement.innerHTML = renderKitten(kittenData_1) + renderKitten(kittenData_2) + renderKitten(kittenData_3);
+
+for (let i = 0; i < ulElement.querySelectorAll('.card').length; i++) {
+  const kitten = ulElement.querySelectorAll('.card')[i];
+  const kittenRace = kitten.querySelector('.card_race');
+  kittenRace.innerHTML = renderRace(kittenRace.innerHTML);
+} ;
+
+
+***************************************
+  Ejercicios Capitulo 7 Arrays y Bucles:
+***************************************
+*/
+
+const kittenDataList = [
+  {
+    image: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
+    name: "Anastacio",
+    desc: "Ruiseño, juguetón, le gusta estar tranquilo y que nadie le moleste. Es una maravillla",
+    race: "British Shorthair",
+  },
+  {
+    image: "https://images.emedicinehealth.com/images/article/main_image/cat-scratch-disease.jpg",
+    name: "Fiona",
+    desc: "Ruiseño, juguetón y cariñoso le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
+    race: "British Shorthair",
+  },
+  {
+    image: "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_39/3021711/190923-cat-pet-stock-cs-1052a.jpg",
+    name: "Cielo",
+    desc: "Un gato perezoso",  
+  },
+];
+
+function renderKitten(kitten) {
+  return `
+    <li class="card">
+      <article>
+        <img
+          class="card_img"
+          src=${kitten.image}
+          alt="gatito"
+        />
+        <h3 class="card_title">${kitten.name}</h3>
+        <h4 class="card_race">${kitten.race}</h4>
+        <p class="card_description">${kitten.desc}</p>
+      </article>
+    </li>
+  `
+};
+
+function renderRace(race) {
+
+  if (race === '' || race === 'undefined' || typeof race === 'undefined') {
+    return `No se ha especificado la raza`;
+  } else {
+    return race;
+  }
+
+};
+
+
+const ulElement = document.querySelector('.js-list');
+
+ulElement.innerHTML = '';
+
+for (const kitten of kittenDataList) {
+  ulElement.innerHTML += renderKitten(kitten);
+};
+
+
 
 for (let i = 0; i < ulElement.querySelectorAll('.card').length; i++) {
   const kitten = ulElement.querySelectorAll('.card')[i];
