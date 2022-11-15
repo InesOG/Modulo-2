@@ -5,7 +5,7 @@ function fetchRepos() {
         .then((orgResponse) => orgResponse.json())
         .then((orgData) => {
             const reposURL = orgData.repos_url;
-            fetch(`${reposURL}`)
+            fetch(reposURL)
                 .then((repoResponse) => {
                     return repoResponse.json();
                 })
