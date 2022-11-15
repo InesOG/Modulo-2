@@ -5,22 +5,23 @@ function fetchRepos() {
         .then((orgResponse) => orgResponse.json())
         .then((orgData) => {
             const reposURL = orgData.repos_url;
-            
-            fetch(reposURL)
-                .then((repoResponse) => repoResponse.json())
+            fetch(`${reposURL}`)
+                .then((repoResponse) => {
+                    return repoResponse.json();
+                })
                 .then((repoData) => {
-                    const reposNames = repoData.name;
-                    console.log(reposNames);
+                    const ulElement = document.querySelector(".js-reposList");
+                    for (const repository of repoData) {
+                        ulElement.innerHTML += `<li>${repository.name}</li>`;
+                    };
                 });
 
         });
-    
-        return orgRepos;
 };
 
 const btn = document.querySelector(".js-button");
 
 btn.addEventListener("click", (event) => {
     event.preventDefault();
-    fetchRepos;
+    fetchRepos();
 })
