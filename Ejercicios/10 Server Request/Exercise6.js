@@ -67,19 +67,15 @@ function getRandomBreedAndImage() {
                     fetch(`https://dog.ceo/api/breed/${breed}/images/random`)
                         .then((imgRespone) => imgRespone.json())
                         .then((imgMessage) => {
+                            let dogImage;
                             if (document.querySelector('img')) {
-                                let dogImage = document.querySelector('img');
-                                console.log('True');                               
-                                dogImage.src = imgMessage.message;
-                                dogImage.alt = `A ${breed} image`;
-                                bodyElement.appendChild(dogImage);
+                                dogImage = document.querySelector('img');                             
                             } else {
-                                let dogImage = document.createElement('img');
-                                console.log('False');                                
-                                dogImage.src = imgMessage.message;
-                                dogImage.alt = `A ${breed} image`;
-                                bodyElement.appendChild(dogImage);
+                                dogImage = document.createElement('img');      
                             }
+                            dogImage.src = imgMessage.message;
+                            dogImage.alt = `A ${breed} image`;
+                            bodyElement.appendChild(dogImage);
                         });
                 })
             })
