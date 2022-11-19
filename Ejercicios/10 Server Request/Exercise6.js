@@ -1,4 +1,8 @@
-/*function getRandomBreed() {
+/*
+This first part of the exercise that I commented is for painting
+the whole list of breeds.
+
+function getRandomBreed() {
 
 }
 
@@ -32,6 +36,10 @@ fetch('https://dog.ceo/api/breeds/list/all')
           
         };
     })
+
+
+The below will select a random breed first, and then look for a 
+random image of that breed
 */
 
 function getRandomBreedAndImage() {
