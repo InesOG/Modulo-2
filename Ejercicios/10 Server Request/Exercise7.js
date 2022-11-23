@@ -4,9 +4,10 @@ const createPromise = () =>
     );
 
 function getBreedImages() {
-    // This wouldn't work because is executing the function 
-    // once and duplicating it so it'll show me the same image
-    const promises =  Array(10).fill(createPromise()); 
+    const promises = [];
+    for (let i = 0; i < 25; i++) {
+        promises.push(createPromise());
+    } 
     Promise.all(promises).then((responses) => {
         const containerEl = document.querySelector('container');
         for (let i = 0; i < responses.length; i++) {
