@@ -1,0 +1,19 @@
+Looking at the Star Wars public API. https://swapi.py4e.com/documentation
+
+Esta API ofrece una manera de buscar cierta informacion.
+Dependiendo del recurso al que estemos accediendo asi sera la busqueda. 
+Por ejemplo "people" permite buscar por nombre, con lo cual la manera de 
+pedir informacion de un personaje en concreto sera:
+
+https://swapi.py4e.com/api/people/?search=Obi-Wan%20Kenobi
+
+
+Para el recurso de peliculas podremos buscar por el titulo:
+
+https://swapi.py4e.com/api/films/?search=A%20New%20Hope
+
+
+Para cambiar el formato a wookiee:
+
+https://swapi.py4e.com/api/films/?search=A%20New%20Hope&format=wookiee
+
