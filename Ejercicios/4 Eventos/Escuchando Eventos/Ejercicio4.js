@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 const paraElement = document.querySelector('.parrafo');
 
 paraElement.addEventListener('mouseover', () => {
-    paraElement.innerHTML += `<br>lorem ipsum`;
-})
+  paraElement.innerHTML += `<br>lorem ipsum`;
+});

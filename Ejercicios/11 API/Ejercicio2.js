@@ -1,3 +1,5 @@
+'use strict';
+
 const buttonElement = document.querySelector('.js-search-button');
 
 const ulElement = document.querySelector('ul');
